@@ -111,7 +111,7 @@ def check(sess_id: str, session: requests.session):
 
 
 def notify_user(token: str, msg: str):
-    rs = requests.post(url="https://api.ssss.fun/push/post.php?subject=E-Renew", json=dict(token=token, msg=msg)).json()
+    rs = requests.post(url="https://api.ssss.fun/push/post.php", json=dict(token=token, msg=msg)).json()
     assert int(rs["code"] / 100) == 2, rs
 
 
